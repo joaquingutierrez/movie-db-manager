@@ -1,4 +1,5 @@
 from .studio_menu import studioMenu
+from .movie_menu import movieMenu
 
 def menu():
     print("-----Menu Principal-----")
@@ -16,6 +17,7 @@ def menu():
     
         if op == 1:
             print("-----Menu de Peliculas-----")
+            movieMenu()
         if op == 2:
             print("-----Menu de Estrellas-----")
         if op == 3:
