@@ -1,3 +1,5 @@
+from .studio_menu import studioMenu
+
 def menu():
     print("-----Menu Principal-----")
     op = 0
@@ -12,13 +14,13 @@ def menu():
         except Exception as e:
             print("Opción no válida.")
     
-    if op == 1:
-        print("-----Menu de Peliculas-----")
-    if op == 2:
-        print("-----Menu de Estrellas-----")
-    if op == 3:
-        print("-----Menu de Estudios-----")
-    if op == 4:
-        print("-----Menu de Protagonizadas-----")
-    if op == 9:
-        print("-----Fin del Programa-----")
+        if op == 1:
+            print("-----Menu de Peliculas-----")
+        if op == 2:
+            print("-----Menu de Estrellas-----")
+        if op == 3:
+            studioMenu()
+        if op == 4:
+            print("-----Menu de Protagonizadas-----")
+        if op == 9:
+            print("-----Fin del Programa-----")

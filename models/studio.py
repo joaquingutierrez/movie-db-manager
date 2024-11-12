@@ -1,10 +1,9 @@
 from .base import IdClass
 
 class Studio(IdClass):
-    def __init__(self, id, name, address):
-        super().__init__(id)
-        self._name = self._validateName(name)
-        self._address = self._validateAddress(address)
+    def __init__(self, name, address):
+        self.name = self._validateName(name)
+        self.address = self._validateAddress(address)
 
     def _validateName (self, name):
         name = str(name).strip()
@@ -19,5 +18,5 @@ class Studio(IdClass):
         return address
     
     def __str__ (self):
-        return  f"Nombre: {self._name}" \
-                f"Dirección: {self._address}"
+        return  f"Nombre: {self.name}" \
+                f"Dirección: {self.address}"

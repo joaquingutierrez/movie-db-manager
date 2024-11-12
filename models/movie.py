@@ -1,12 +1,11 @@
 from .base import IdClass
 
 class Movie(IdClass):
-    def __init__(self, id, title, year, duration, studio_id):
-        super().__init__(id)
-        self._title = self._validateTitle(title)
-        self._year = self._validateYear(year)
-        self._duration = self._validateDuration(duration)
-        self._studio_id = self._validateId(studio_id)
+    def __init__(self, title, year, duration, studio_id):
+        self.title = self._validateTitle(title)
+        self.year = self._validateYear(year)
+        self.duration = self._validateDuration(duration)
+        self.studio_id = self._validateId(studio_id)
 
     def _validateTitle(self, title):
         title = str(title).strip()
@@ -34,7 +33,7 @@ class Movie(IdClass):
     
         
     def __str__(self):
-        return  f"Título: {self._title} \n" \
-                f"Año: {self._year}\n" \
-                f"Duración: {self._duration}\n" \
-                f"Id del Estudio: {self._studio_id}"
+        return  f"Título: {self.title} \n" \
+                f"Año: {self.year}\n" \
+                f"Duración: {self.duration}\n" \
+                f"Id del Estudio: {self.studio_id}"

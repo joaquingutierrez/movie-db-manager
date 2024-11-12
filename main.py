@@ -1,3 +1,4 @@
-from utils.menu import menu
+from utils.functions.menu import menu
+
 
 menu()

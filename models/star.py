@@ -2,12 +2,11 @@ from .base import IdClass
 from datetime import datetime
 
 class Star(IdClass):
-    def __init__ (self, id, name, address, gender, birth_date):
-        super().__init__(id)
-        self._name = self._validateName(name)
-        self._address = self._validateAddress(address)
-        self._gender = self._validateGender(gender)
-        self._birth_date = self._validateBirthDate(birth_date)
+    def __init__ (self, name, address, gender, birth_date):
+        self.name = self._validateName(name)
+        self.address = self._validateAddress(address)
+        self.gender = self._validateGender(gender)
+        self.birth_date = self._validateBirthDate(birth_date)
 
     def _validateName (self, name):
         name = str(name).strip()
@@ -39,7 +38,7 @@ class Star(IdClass):
         return birth_date
     
     def __str__(self):
-        return  f"Nombre: {self._name} \n" \
-                f"Direccion: {self._address}\n" \
-                f"Género: {self._gender}\n" \
-                f"Fecha de Nacimiento: {self._birth_date.strftime("%d-%m-%Y")}"
+        return  f"Nombre: {self.name} \n" \
+                f"Direccion: {self.address}\n" \
+                f"Género: {self.gender}\n" \
+                f"Fecha de Nacimiento: {self.birth_date.strftime("%d-%m-%Y")}"
