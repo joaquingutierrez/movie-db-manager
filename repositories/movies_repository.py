@@ -64,4 +64,4 @@ class MovieRepository(BaseRepository):
         sql = "SELECT * FROM movies WHERE id = ?"
         parameters = (movie_id,)
         self._cursor.execute(sql, parameters)
-        return self._cursor.fetchall()
+        return self._cursor.fetchone()

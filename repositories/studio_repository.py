@@ -55,4 +55,4 @@ class StudioRepository(BaseRepository):
         sql = "SELECT * FROM studios WHERE id = ?"
         parameters = (studio_id,)
         self._cursor.execute(sql, parameters)
-        return self._cursor.fetchall()
+        return self._cursor.fetchone()

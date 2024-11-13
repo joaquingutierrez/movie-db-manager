@@ -63,4 +63,4 @@ class StarRepository(BaseRepository):
         sql = "SELECT * FROM stars WHERE id = ?"
         parameters = (star_id,)
         self._cursor.execute(sql, parameters)
-        return self._cursor.fetchall()
+        return self._cursor.fetchone()

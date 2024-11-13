@@ -1,5 +1,7 @@
 from models.stars_in import StarsIn
 from utils.const.db import stars_in_service
+from utils.const.db import movie_service
+from utils.const.db import star_service
 
 def starsInMenu():
     print("-----Menu de Protagonizaciones-----")
@@ -56,6 +58,20 @@ def getAll():
         for item in stars_in:
             print("ID de la Pelicula: ", item[0])
             print("ID de la Estrella: ", item[1])
+            movie = movie_service.getById(item[0])
+            star = star_service.getById(item[1])
+            if (movie is not None):
+                print("Título de la Película: ", movie[1])
+                print("Año de la Película: ", movie[2])
+            else:
+                print("Título de la Película: No encontrado")
+                print("Año de la Película: No encontrado")
+
+            if (star is not None):
+                print("Nombre de la Estrella: ", star[1])
+            else:
+                print("Nombre de la Estrella: No encontrado")
+
             print("")
     except ValueError as e:
         print("Error: ", e)

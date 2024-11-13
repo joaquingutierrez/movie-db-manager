@@ -1,5 +1,6 @@
 from models.movie import Movie
 from utils.const.db import movie_service
+from utils.const.db import studio_service
 
 def movieMenu():
     print("-----Menu de Peliculas-----")
@@ -78,6 +79,10 @@ def getAll():
             print("Año: ", movie[2])
             print("Duración: ", movie[3])
             print("ID Del Estudio: ", movie[4])
-            print("")
+            studio = studio_service.getById(movie[4])
+            if (studio is not None):
+                print("Nombre del Estudio: ", studio[1])
+            else:
+                print("Nombre del Estudio no encontrado")
     except ValueError as e:
         print("Error: ", e)
