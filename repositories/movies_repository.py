@@ -62,6 +62,6 @@ class MovieRepository(BaseRepository):
 
     def getById(self, movie_id):
         sql = "SELECT * FROM movies WHERE id = ?"
-        parameters = (movie_id)
+        parameters = (movie_id,)
         self._cursor.execute(sql, parameters)
         return self._cursor.fetchall()

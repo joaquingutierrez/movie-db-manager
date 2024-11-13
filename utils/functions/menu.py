@@ -1,5 +1,6 @@
 from .studio_menu import studioMenu
 from .movie_menu import movieMenu
+from .star_menu import starMenu
 
 def menu():
     print("-----Menu Principal-----")
@@ -16,10 +17,9 @@ def menu():
             print("Opción no válida.")
     
         if op == 1:
-            print("-----Menu de Peliculas-----")
             movieMenu()
         if op == 2:
-            print("-----Menu de Estrellas-----")
+            starMenu()
         if op == 3:
             studioMenu()
         if op == 4:

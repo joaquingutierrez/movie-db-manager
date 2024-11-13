@@ -57,7 +57,7 @@ def updateStudio():
 
 def deleteStudio():
     while True:
-        studio_id = input("Ingrese el ID del Estudio a Modificar: ")
+        studio_id = input("Ingrese el ID del Estudio a Eliminar: ")
         try:
             studio_id = int(studio_id)
             studio_service.delete(studio_id)

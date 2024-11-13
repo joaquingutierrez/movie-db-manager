@@ -53,6 +53,6 @@ class StudioRepository(BaseRepository):
 
     def getById(self, studio_id):
         sql = "SELECT * FROM studios WHERE id = ?"
-        parameters = (studio_id)
+        parameters = (studio_id,)
         self._cursor.execute(sql, parameters)
         return self._cursor.fetchall()
