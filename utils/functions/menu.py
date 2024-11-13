@@ -1,6 +1,7 @@
 from .studio_menu import studioMenu
 from .movie_menu import movieMenu
 from .star_menu import starMenu
+from .stars_in_menu import starsInMenu
 
 def menu():
     print("-----Menu Principal-----")
@@ -9,7 +10,7 @@ def menu():
         print("1. Menu de Peliculas")
         print("2. Menu de Estrellas")
         print("3. Menu de Estudios")
-        print("4. Menu de Protagonizadas")
+        print("4. Menu de Protagonizaciones")
         print("9. Terminar")
         try:
             op = int(input("Ingrese la opción deseada: "))
@@ -23,6 +24,6 @@ def menu():
         if op == 3:
             studioMenu()
         if op == 4:
-            print("-----Menu de Protagonizadas-----")
+            starsInMenu()
         if op == 9:
             print("-----Fin del Programa-----")
